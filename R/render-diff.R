@@ -170,7 +170,7 @@ render_diff <- function(  diff
   }
 
   # Write to the specified file
-  cat(html, file = file)
+  cat(html, file = (con <- file(file, "w", encoding="UTF-8"))); close(con)
 
   # Display in a browser window
   if (view && file != "" && interactive()){
